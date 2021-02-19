@@ -132,25 +132,10 @@ func randomWordLength() WordLength {
 		total = amount
 	}
 	random := randomNum()
-	lookupList[1] = wordfrequency[0]
-	lookupList[2] = wordfrequency[1]
-	lookupList[3] = wordfrequency[2]
-	lookupList[4] = wordfrequency[3]
-	lookupList[5] = wordfrequency[4]
-	lookupList[6] = wordfrequency[5]
-	lookupList[7] = wordfrequency[6]
-	lookupList[8] = wordfrequency[7]
-	lookupList[9] = wordfrequency[8]
-	lookupList[10] = wordfrequency[9]
-	lookupList[11] = wordfrequency[10]
-	lookupList[12] = wordfrequency[11]
-	lookupList[13] = wordfrequency[12]
-	lookupList[14] = wordfrequency[13]
-	lookupList[15] = wordfrequency[14]
-	lookupList[16] = wordfrequency[15]
-	lookupList[17] = wordfrequency[16]
-	lookupList[18] = wordfrequency[17]
-	lookupList[19] = wordfrequency[18]
+	// 循环赋值
+	for n := 0; n < len(wordfrequency); n++ {
+		lookupList[n+1] = wordfrequency[n]
+	}
 	prev := 0
 	for key := range lookupList {
 		lengthfreq := lookupList[key]
@@ -230,23 +215,28 @@ func GenRandomWorld(length int, model string) (WorldList, error) {
 	}
 	return w, nil
 }
+
 // none
-func GenRandomNone(length int) (WorldList, error){
-	return GenRandomWorld(length,"none")
+func GenRandomNone(length int) (WorldList, error) {
+	return GenRandomWorld(length, "none")
 }
+
 // lower
-func GenRandomLower(length int) (WorldList, error){
-	return GenRandomWorld(length,"lower")
+func GenRandomLower(length int) (WorldList, error) {
+	return GenRandomWorld(length, "lower")
 }
+
 // title
-func GenRandomTitle(length int) (WorldList, error){
-	return GenRandomWorld(length,"title")
+func GenRandomTitle(length int) (WorldList, error) {
+	return GenRandomWorld(length, "title")
 }
+
 // mix
-func GenRandomMix(length int) (WorldList, error){
-	return GenRandomWorld(length,"mix")
+func GenRandomMix(length int) (WorldList, error) {
+	return GenRandomWorld(length, "mix")
 }
+
 // upper
-func GenRandomUpper(length int) (WorldList, error){
-	return GenRandomWorld(length,"upper")
+func GenRandomUpper(length int) (WorldList, error) {
+	return GenRandomWorld(length, "upper")
 }
