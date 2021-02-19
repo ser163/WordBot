@@ -53,6 +53,7 @@ func GenRandomWorld(length int, model string) (WorldList, error)
   5. title 首字母大写模式，与GenRandomTitle()功能相同
 ## 地址
    Github: http://github.com/ser163/WordBot/
+
    Gitee: http://gitee.com/ser163/WordBot/
 ## 感谢
 此项目算法参考： https://namefull.github.io
